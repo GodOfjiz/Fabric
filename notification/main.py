@@ -36,7 +36,6 @@ class NotificationWidget(Box):
                     pixbuf=image_pixbuf.scale_simple(
                         NOTIFICATION_IMAGE_SIZE,
                         NOTIFICATION_IMAGE_SIZE,
-                        GdkPixbuf.InterpType.BILINEAR,
                     )
                 )
             )
