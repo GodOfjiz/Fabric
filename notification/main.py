@@ -9,11 +9,9 @@ from fabric.widgets.wayland import WaylandWindow
 from fabric.notifications import Notifications, Notification
 from fabric.utils import invoke_repeater, get_relative_path
 
-
-
 NOTIFICATION_WIDTH = 360
 NOTIFICATION_IMAGE_SIZE = 64
-NOTIFICATION_TIMEOUT = 10 * 1000  # 10 seconds
+NOTIFICATION_TIMEOUT = 5 * 1000  # 5 Seconds
 
 
 class NotificationWidget(Box):
@@ -28,7 +26,10 @@ class NotificationWidget(Box):
 
         self._notification = notification
 
-        body_container = Box(spacing=4, orientation="h")
+        body_container = Box(
+            spacing=4, 
+            orientation="h"
+        )
 
         if image_pixbuf := self._notification.image_pixbuf:
             body_container.add(
@@ -133,7 +134,7 @@ if __name__ == "__main__":
         "notifications",
         WaylandWindow(
             margin="8px 8px 8px 8px",
-            anchor="top right",
+            anchor="top center",
             child=Box(
                 size=2,  # so it's not ignored by the compositor
                 spacing=4,

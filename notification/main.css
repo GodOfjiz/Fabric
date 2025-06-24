@@ -1,21 +1,20 @@
+@import "/home/jasminder/.cache/wal/colors-waybar.css";
+
 :vars {
-    --foreground: rgb(255, 255, 255);
-    --background: rgb(26, 28, 30);
-    --border-color: rgb(42, 43, 45);
     --button-color: var(--border-color);
 }
 
 * {
     all: unset;
-    color: var(--foreground);
-    font-family: "Jost*", "Cantarell", "Helvetica", "Arial", sans-serif;
+    color: @foreground;
+    font-family: "Jetbrain Mono", sans-serif;
 }
 
 #notification {
     padding: 0.8rem;
-    border: solid 1px var(--border-color);
-    border-radius: 1rem;
-    background-color: var(--background);
+    border: solid 2px lighter(@color3);
+    border-radius: 15px;
+    background-color: @background;
 }
 
 #notification .summary {
@@ -24,7 +23,7 @@
 }
 
 #notification .body {
-    color: darker(var(--foreground));
+    color: @foreground;
     font-weight: normal;
 }
 
